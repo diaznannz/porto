@@ -55,7 +55,7 @@ body {
   color: #ff2e2e;
 }
 
-/* Hamburger Menu Icon (Hidden by default) */
+/* Hamburger Menu Icon */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -168,7 +168,7 @@ body {
 }
 
 /* ============================= */
-/* SKILLS SECTION */
+/* SKILLS */
 /* ============================= */
 .skills {
   padding: 0px 30px;
@@ -232,7 +232,7 @@ body {
 }
 
 /* ============================= */
-/* EXPERIENCE SECTION */
+/* EXPERIENCE */
 /* ============================= */
 .experience {
   padding: 120px 80px;
@@ -265,48 +265,81 @@ body {
   box-shadow: 0 0 20px rgba(255, 46, 46, 0.15);
 }
 
-.exp-left {
-  flex: 1;
-  text-align: left;
+/* ============================= */
+/* PROJECT SECTION */
+/* ============================= */
+.projects {
+  padding: 120px 80px;
+  background: #0a0a0a;
+  min-height: 100vh;
 }
 
-.exp-left h3 {
-  font-size: 22px;
+.projects h2 {
+  text-align: center;
+  font-size: 36px;
   color: #ff2e2e;
-  margin-bottom: 8px;
+  margin-bottom: 60px;
 }
 
-.exp-left .contract {
-  font-size: 15px;
-  color: #b3b3b3;
-  font-style: italic;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom sejajar */
+  gap: 40px;
+  align-items: start;
 }
 
-.exp-left .date,
-.exp-left .location {
-  font-size: 14px;
-  color: #777;
+.project-card {
+  background: #111;
+  border: 1px solid #1c1c1c;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.exp-right {
-  flex: 2;
+.project-card:hover {
+  border-color: #ff2e2e;
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 46, 46, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 25px;
   text-align: left;
 }
 
-.exp-right h4 {
-  font-size: 18px;
+.project-info h3 {
   color: #fff;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
-.exp-right p {
+.project-info p {
+  color: #b3b3b3;
   font-size: 15px;
-  color: #ccc;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects {
+    padding: 100px 40px;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+}
+
 
 /* ============================= */
-/* EDUCATION SECTION */
+/* EDUCATION */
 /* ============================= */
 .education {
   padding: 120px 80px;
@@ -354,12 +387,6 @@ body {
   margin-bottom: 10px;
 }
 
-.nilai {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 10px;
-}
-
 .date {
   font-size: 14px;
   color: #777;
@@ -393,8 +420,6 @@ footer {
 /* ============================= */
 /* RESPONSIVE DESIGN */
 /* ============================= */
-
-/* Tablet (max width 1024px) */
 @media (max-width: 1024px) {
   .navbar {
     padding: 15px 40px;
@@ -410,26 +435,13 @@ footer {
     font-size: 48px;
   }
 
-  .hero-text h2 {
-    font-size: 24px;
-  }
-
-  .hero-img {
-    margin-top: 40px;
-  }
-
   .blob {
     width: 300px;
     height: 300px;
   }
 
-  .skills,
-  .tech {
-    padding: 60px 40px;
-  }
-
-  .education {
-    padding: 120px 40px;
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .edu-card {
@@ -449,7 +461,6 @@ footer {
   }
 }
 
-/* Mobile (max width 768px) */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 25px;
@@ -480,45 +491,23 @@ footer {
     font-size: 38px;
   }
 
-  .hero-text p {
-    font-size: 16px;
-  }
-
   .skills-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .tech-logos img {
-    width: 50px;
-    height: 50px;
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 
-  .exp-card {
-    flex-direction: column;
-  }
-
+  .exp-card,
   .edu-card {
     flex-direction: column;
   }
 }
 
-/* Small Mobile (max width 480px) */
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 32px;
-  }
-
-  .hero-text h2 {
-    font-size: 20px;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .blob {
-    width: 250px;
-    height: 250px;
   }
 
   .btn {
@@ -526,7 +515,12 @@ footer {
     font-size: 14px;
   }
 
-  .exp-card {
-    padding: 25px;
+  .blob {
+    width: 250px;
+    height: 250px;
+  }
+
+  .project-card img {
+    height: 180px;
   }
 }
